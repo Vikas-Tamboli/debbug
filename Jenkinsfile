@@ -73,8 +73,7 @@ pipeline{
     //terraform apply
      when {
         //only terraform apply if a "apply" is requested
-        expression { params.ACTION == 'apply'}
-}
+      environment name: 'ACTION', value: 'apply' }
      steps{
       script{
        sh '''
@@ -92,13 +91,13 @@ pipeline{
     //terraform destroy
      when {
         //only terraform destroy if a "destroy" is requested
-        expression { params.ACTION == 'destroy'}
-}
+        environment name: 'ACTION', value: 'destroy'}
      steps{
       script{
         sh '''
  	     cd infra
-             terraform destroy -auto-approve          
+             terraform destroy -auto-approve
+             cd -          
         '''                                      
 
 }
