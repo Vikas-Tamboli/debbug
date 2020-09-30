@@ -95,11 +95,8 @@ pipeline{
 }
      steps{
       script{
-       sh '''
-            cd infra
             terraform destroy --auto-approve
-            cd -
-       '''                                                
+                                                    
 
 }
 }
