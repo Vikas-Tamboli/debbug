@@ -28,7 +28,7 @@ pipeline{
    stage("Repo_clone"){
        //Clone repo from GitHub
       steps {
-         checkout ([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'instance_id', url:'git@github.com:shubh9975/sample.git']]])
+         checkout ([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'instance_id', url:'git@github.com:Vikas-Tamboli/debbug.git']]])
 
 }
 }
@@ -97,7 +97,7 @@ pipeline{
       script{
        sh '''
             cd infra
-            terraform destroy -state-out=terraform.tfstate --auto-approve
+            terraform destroy --auto-approve
             cd -
        '''                                                
 
