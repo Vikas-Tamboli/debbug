@@ -56,18 +56,17 @@ pipeline{
 }
 }   
 
-  // stage("terraform_plan"){
-     //terraform plan
-     // steps{
-      // script{
-      // sh '''
-           // cd infra
-            //terraform plan 
-           // cd -
-      // '''        
-//}
-//}
-//}
+   stage("terraform_plan"){
+     terraform plan
+      steps{
+       script{
+        sh '''
+            cd infra
+            terraform plan 
+            cd -
+       '''        }
+
+}
  
    stage("terraform_plan_apply"){
     //terraform apply
@@ -78,7 +77,7 @@ pipeline{
       script{
        sh '''
             cd infra
-            terraform plan
+          
             terraform apply -state-out=terraform.tfstate --auto-approve 
             cd -
        '''
