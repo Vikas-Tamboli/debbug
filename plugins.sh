@@ -1,16 +1,13 @@
-
-
 #!/bin/bash
 
-filename = "infra/.terraform"
+filename="infra/.terraform"
 
-if[ -d $filename ]
+if [ -d $filename ]
 then
 	exit
 else
-	
-		cd infra
-		terraform init
-		cd -
+         cd infra
+	 terraform init
+	 cd -
+fi
 
-fi	
