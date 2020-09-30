@@ -64,8 +64,9 @@ pipeline{
             cd infra
             terraform plan 
             cd -
-       '''        }
-
+       '''      
+}
+}
 }
  
    stage("terraform_plan_apply"){
