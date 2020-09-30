@@ -95,8 +95,10 @@ pipeline{
 }
      steps{
       script{
-        sh "cd infra"
-        sh "bash destroy.sh"                                                    
+        sh '''
+ 	     cd infra
+             bash destroy.sh          
+        '''                                      
 
 }
 }
