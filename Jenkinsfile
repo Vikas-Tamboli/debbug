@@ -57,7 +57,7 @@ pipeline{
 }   
 
    stage("terraform_plan"){
-     terraform plan
+     //iterraform plan
       steps{
        script{
         sh '''
