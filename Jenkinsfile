@@ -65,9 +65,9 @@ pipeline{
             //terraform plan 
            // cd -
       // '''        
-}
-}
-}
+//}
+//}
+//}
  
    stage("terraform_plan_apply"){
     //terraform apply
