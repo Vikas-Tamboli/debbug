@@ -97,7 +97,7 @@ pipeline{
       script{
         sh '''
  	     cd infra
-             bash destroy.sh          
+             terraform destroy --auto-aprove          
         '''                                      
 
 }
